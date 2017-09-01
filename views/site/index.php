@@ -2,7 +2,7 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'My Yii Application';
+$this->title = '学习圈';
 $this->registerCssFile('/css/index.css');
 
 ?>
