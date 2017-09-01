@@ -63,7 +63,7 @@ position: relative;}
 /*左侧标题*/
 .column-hd {-moz-border-bottom-colors: none;-moz-border-left-colors: none; -moz-border-right-colors: none;-moz-border-top-colors: none; background: #f8fbfd none repeat scroll 0 0;border-color: #e53e41 #e1e6e5 #e1e6e5; border-image: none; border-style: solid; border-width: 3px 1px 1px;
 box-shadow: 1px 1px 1px #f5f5f5; height: 50px;}
-.column-hd h2{ background:url("../images/gd.png") no-repeat scroll -180px -1263px; line-height:50px; padding-left:30px; font-size:24px; font-weight:normal; float:left;}
+.column-hd_h2{ background:url("../images/gd.png") no-repeat scroll -180px -1263px; line-height:50px; padding-left:30px; font-size:24px; font-weight:normal; float:left;}
 .column-hd .fr{ color:#999;}
 .column-hd .fr a{ padding-left:10px; padding-right:10px; line-height:50px; color:#666;}
 .column-hd .fr a:hover{ color:#c00;}

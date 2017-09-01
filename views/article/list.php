@@ -18,7 +18,7 @@ $this->registerCssFile('/css/other.css');
 <div class="wx-wrap">
     <div class="left-slide">
         <div class="column-hd clearfix">
-            <span>成考动态</span>
+            <div class="column-hd_h2">成考动态</div>
             <div class="fr"><a href="#">录取查询</a>&nbsp;<a href="#">成考政策</a>&nbsp;<a href="#">报名时间</a>&nbsp;<a href="#">成绩查询</a>&nbsp;</div>
         </div>
         <div class="dqdh">
