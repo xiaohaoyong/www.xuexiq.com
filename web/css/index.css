@@ -1,0 +1,339 @@
+@charset "UTF-8";
+/*首页——右侧——全部课程分类*/
+.wx-cat{
+  width:246px;
+  height: 294px;
+  border:1px solid #c00;
+  float: left;
+  margin-right: 10px;
+}
+.wx-cat .cat-head{
+  padding:0 10px;
+  height: 28px;
+  line-height: 28px;
+  color: #fff;
+  font-size: 14px;
+  background: #c00;
+}
+.wx-cat .cat-head .cat-head-icon{
+  float: left;
+  display: inline-block;
+  width: 14px;
+  height: 28px;
+  background: url(../images/icon1.jpg) no-repeat left center;
+  margin-right: 10px;
+}
+.wx-cat .cat-bd{
+  background: #fff;
+}
+.wx-cat .cat-bd .catbox{
+  border-bottom:1px solid #efefef;
+  padding:2px 10px 0;
+  position: relative;
+  z-index: 99;
+  height: 37px;
+}
+.wx-cat .cat-bd .catbox .catbox-title{
+  font-weight: 700;
+  font-size: 14px;
+  color: #000;
+  height: 18px;
+  line-height: 18px;
+}
+.wx-cat .cat-bd .catbox .catbox-dd{
+  height: 18px;
+}
+.wx-cat .cat-bd .catbox .catbox-dd a{
+  display: inline-block;
+  word-wrap: break-word;
+}
+.wx-cat .cat-bd .catbox .catbox-dd a:hover{
+  color: #c00;
+}
+.snavsel{
+  background: #fde3e3;
+}
+/*首页——右侧——导航——三级内容*/
+.subcat_child{
+  position: absolute;
+  display: none;
+  left: 185px;
+  top:0;
+  z-index: 99;
+  width: 495px;
+  padding:5px 20px 5px 27px;
+  background: #fff;
+  -webkit-box-shadow: 0 0 8px #ccc;
+  -moz-box-shadow: 0 0 8px #ccc;
+  -o-box-shadow: 0 0 8px #ccc;
+  box-shadow: 0 0 8px #ccc;
+  border:1px solid #e5e5e5;
+}
+.subcat_child .subcat_child-title a{
+  display:inline-block;
+  color: #c00;
+  margin-right: 20px !important;
+}
+.subcat_child .subcat_child-title i{
+  background: url(../images/bgs_gb_03.jpg) no-repeat left center;
+  display: inline-block;
+  margin-right: 5px;
+  width: 9px;
+  height: 9px;
+  float:left;
+  margin-top:6px;
+}
+.subcat_child .subcat_child-title{
+  padding:10px 0;
+  line-height: 20px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #d8d8d8;
+}
+.subcat_child .subcat_child-bd{
+  padding:8px 0;
+  border-bottom: 1px solid #e1e1e1;
+}
+.subcat_child .subcat_child-bd em{
+  display: block;
+  height: 24px;
+  line-height: 24px;
+  overflow: hidden;
+  font-style: normal;
+  font-weight: 700;
+  margin-bottom: 5px;
+  display: block;
+}
+.subcat_child .subcat_child-bd em a{
+  font-weight: 700;
+}
+.subcat_child .subcat_child-bd em a:hover{
+  color: #c00;
+}
+.subcat_child .subcat_child-bd p a{
+  display: inline-block;
+  word-wrap: break-word;
+}
+.subcat_child .subcat_child-bd p a:hover{
+  color: #c00;
+  text-decoration: underline;
+}
+.subcat_child .subcat_child-bd p span{
+  padding:0 5px;
+}
+/*导航*/
+.wx-wrap-r{
+  float: right;
+  width:768px;
+}
+.wx-nav{
+  height: 38px;
+  line-height: 38px;
+  border-bottom: 2px solid #c00;
+  width: 837px;
+}
+.wx-nav ul{
+  overflow: hidden;
+}
+.wx-nav ul li{
+  float: left;
+  width:93px;
+  text-align: center;
+}
+.wx-nav ul li a{
+  color: #c00;
+  font-size: 14px;
+}
+.wx-nav ul li a:hover{
+  text-decoration: none;
+}
+/*考试日历表*/
+.wx-calendar{
+  float: left;
+  width:246px;
+  margin-left: 10px;
+}
+.wx-calendar .calendar-main-title{
+  text-align: center;
+  color: #000;
+  font-size: 14px;
+  line-height: 34px;
+  height: 34px;
+}
+.wx-calendar .calendar-sub-title{
+  background: #f5f5f5;
+  height: 30px;
+  line-height: 30px;
+}
+.wx-calendar .calendar-sub-title li{
+  float: left;
+  width: 82px;
+  text-align: center;
+  color: #c00;
+}
+.wx-calendar .calendar-bd li{
+  height: 30px;
+  line-height: 30px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  text-align: center;
+  border-bottom: 1px solid #fafafa;
+}
+.wx-calendar .calendar-bd li span{
+  display: block;
+  float:left;
+  width: 82px;
+  text-align: center;
+  height: 30px;
+  line-height: 30px;
+
+}
+
+.wx-calendar .calendar-bd .color1{
+  color: #c00;
+}
+.wx-calendar .calendar-btn{
+}
+.wx-calendar .calendar-btn a{
+  display: block;
+  float: left;
+  width: 118px;
+  height: 30px;
+  line-height: 30px;
+  background: #fe8713;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+}
+.wx-calendar .calendar-btn a:hover{
+  text-decoration: none;
+  background: #fda212;
+}
+.wx-calendar .calendar-btn a:last-child{
+  margin-left: 10px;
+}
+
+/*首页——幻灯*/
+#focus {width:512px; height:294px; float: left; overflow:hidden; position:relative;}
+#focus ul {height:294px; position:absolute;}
+#focus ul li {float:left; width:512px; height:294px; overflow:hidden; position:relative; background:#000;}
+#focus ul li div {position:absolute; overflow:hidden;}
+
+
+#focus .btn{position:absolute;bottom:20px;right:20px;}
+#focus .btn span{cursor:pointer;width:20px;height:10px;display:block;overflow:hidden;text-indent:20px;background:url(../images/news_index_icon.png) no-repeat -136px 3px; float:left;margin:0 0 0 5px;}
+#focus .btn span.on{background-position:-161px 1px;}
+
+
+#focus .preNext{
+  display:block;
+  width:40px;
+  position:absolute;
+  top:172px;
+  height:40px;
+}
+#focus .preNext i{cursor:pointer;display:block;width:22px;height:34px; background:url(../images/star.png) no-repeat;}
+#focus .pre{left:5px;}
+#focus .pre i{background-position:-34px -68px;_background:none;_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/star_05.png');margin-left:5px;}
+#focus .pre:hover i{left:10px;background-position:-34px -24px;_background:none;_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/star_03.png');}
+#focus .next{right:5px;}
+#focus .next i{background-position:-62px -68px;_background:none;_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/star_06.png');margin-left:10px;}
+#focus .next:hover i{right:10px;background-position:-62px -24px;_background:none;_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='../images/star_04.png');}
+
+/*首页资讯展示*/
+.wx-newslist{
+  width: 1024px;
+  margin-top: 20px;
+}
+.wx-newslist .f-titlediv{
+  border-bottom: 2px solid #d6d6d6;
+  height: 30px;
+  line-height: 30px;
+}
+.wx-newslist .f-titlediv .f-title{
+  float: left;
+  width: 130px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #000;
+}
+.wx-newslist .f-titlediv .f-tab{
+  float: left;
+}
+.wx-newslist .f-titlediv .f-tab li{
+  float: left;
+}
+.wx-newslist .f-titlediv .f-tab li a{
+  position: relative;
+  display: block;
+  padding:0 20px;
+  height: 30px;
+  line-height: 30px;
+  font-size: 14px;
+}
+.wx-newslist .f-titlediv .f-tab li a:hover{
+  padding:0 20px;
+  text-decoration: none;
+}
+.wx-newslist .f-titlediv .f-tab li a:hover,.wx-newslist .f-titlediv .f-tab li a.active{
+  background: url(../images/hover.jpg) no-repeat bottom;
+  border-bottom: 2px solid #c00;
+}
+.wx-newslist .f-con{
+  padding:22px 0;
+  overflow: hidden;
+  width: 1024px;
+}
+.wx-newslist .f-con .f-con1{
+  width: 340px;
+  float: left;
+}
+.wx-newslist .f-con .f-con2{
+  width: 344px;
+  float: left;
+}
+.wx-newslist .f-con .f-con2 .lastdiv{
+  margin-top: 33px;
+}
+.wx-newslist .f-con .f-con1 .f-header{
+  width: 283px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  height: 18px;
+  line-height: 18px;
+  border-left: 3px solid #c00;
+  padding-left:5px;
+}
+.wx-newslist .f-con .f-con1 .f-header a{
+	font-size: 16px;
+  color: #000;
+}
+.wx-newslist .f-con .f-con1 .f-header a:hover{
+   text-decoration: underline;
+   color: #c00;
+}
+.wx-newslist .f-con .f-con1 .f-list{
+  margin-top: 10px;
+}
+.wx-newslist .f-con .f-con1 .f-list li{
+  width: 283px;
+  height: 25px;
+  line-height: 25px;
+}
+.wx-newslist .f-con .f-con1 .f-list li a{
+  font-size: 14px;
+  display: block;
+  width: 100%;
+   overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+.wx-newslist .f-con .f-con1 .f-list li a:hover{
+  text-decoration: underline;
+  color: #c00;
+}
+/*首页——广告位*/
+.wx-ggw{
+  width: 1024px;
+}
