@@ -5,6 +5,7 @@
  * Date: 2017/9/1
  * Time: 14:34
  */
+$this->title=\app\models\Area::$province[$areaid]."公务员考试";
 $this->registerCssFile('/css/other.css');
 
 ?>
@@ -21,177 +22,73 @@ $this->registerCssFile('/css/other.css');
         <a href=""><?=\app\models\Area::$province[$areaid]?>公务员考试</a>
         <b></b>
     </div>
-    <span class="fr"><a href="#"> 成考动态</a>  | <a href="#"> 报名时间</a> | <a href="#"> 成绩查询</a> | <a href="#"> 录取查询</a> | <a href="#"> 准考证</a> | <a href="#"> 成考政策</a></span>
+    <span class="fr">
+
+        <?php $area=Yii::$app->request->get('area');?>
+        <?=\yii\helpers\Html::a("考试动态",["/gwy/$area/new"])?>|
+        <?=\yii\helpers\Html::a("报名时间",["/gwy/$area/baoming"])?>|
+        <?=\yii\helpers\Html::a("职位表",["/gwy/$area/zhiwei"])?>|
+        <?=\yii\helpers\Html::a("准考证打印",["/gwy/$area/zkzdy"])?>|
+        <?=\yii\helpers\Html::a("考试时间",["/gwy/$area/kssj"])?>|
+        <?=\yii\helpers\Html::a("成绩查询",["/gwy/$area/cjcx"])?>
+
+    </span>
 </div>
 <div class="wx-wrap mt20">
     <div class="left-slide">
+        <?php
+        $count=count(\app\models\article\Article::$catText);
+        $n=ceil($count/2);
+        for($i=0;$i<$n;$i++){
+        ?>
         <div class="row1">
-            <div class="row1-one fl">
+            <?php
+            $list=array_slice(\app\models\article\Article::$catText,($i*2),2,true);
+            foreach($list as $k=>$v){
+            ?>
+            <div class="row1-one <?php if(end($list)==$v){?>fr<?php }else{?>fl<?php }?>">
                 <div class="row1-one-tit">
-                    <span class="row1-tit-1"><a href="#">考试动态</a></span>
-                    <a class="tit-more" target="_blank" href="#">更多<i></i></a>
+                    <span class="row1-tit-1"><?=$v?></span>
+                    <?php
+                    $cat=\app\models\article\Article::$categoryP[$k];
+                    ?>
+                    <a class="tit-more" target="_blank" href="<?=\yii\helpers\Url::to(["/gwy/$area/$cat"])?>">更多<i></i></a>
                 </div>
                 <ul class="row1-one-list">
-                    <li><a href="#" title="" target="_blank" class="txt hot">学位英语考试成绩12月公布</a></li>
-                    <li><a href="#" title="" target="_blank" class="txt">成人高考考生申请学士学位要过三关成人高考考生申请学士学位要过三关</a></li>
-                    <li><a href="#" title="" target="_blank" class="txt">北京开放大学今年计划招生1650人</a></li>
-                    <li><a href="#" title="" target="_blank" class="txt">2015年北京成人高考146名违规考生受处理</a></li>
-                    <li><a href="#" title="" target="_blank" class="txt">“2+1”模式确保2015年成人高考评卷给准每一分</a></li>
-                    <li><a href="#" title="" target="_blank" class="txt">2015年成考 考场新闻少 考生故事多</a></li>
-                    <li><a href="#" title="" target="_blank" class="txt">2015年成人高考4细节影响评卷扫描效果</a></li>
-                    <li><a href="#" title="" target="_blank" class="txt">“2+1”模式确保2015年成人高考评卷给准每一分</a></li>
-                    <li><a href="#" title="" target="_blank" class="txt">2015年成考 考场新闻少 考生故事多</a></li>
-                    <li><a href="#" title="" target="_blank" class="txt">2015年成人高考4细节影响评卷扫描效果</a></li>
+                    <?php
+                    if($k)
+                    {
+                        $where=['area'=>$areaid,'cat'=>$k];
+                    }else{
+                        $where=['area'=>$areaid];
+                    }
+                    $articleList = \app\models\article\Article::find()->where($where)->orderBy('id desc')->limit(10)->all();
+                    foreach($articleList as $ak=>$av){
+                        $article=\app\models\article\ArticleInfo::findOne($av->id);
+                        ?>
+                    <li><a href="<?=\yii\helpers\Url::to(['/show/'.$av->id])?>" title="<?=$article->title?>" target="_blank" class="txt"><?=$article->title?></a></li>
+                    <?php }?>
                 </ul>
             </div>
-            <div class="row1-one fr">
-                <div class="row1-one-tit">
-                    <span class="row1-tit-1"><a href="#">报名时间</a></span>
-                    <a class="tit-more" target="_blank" href="#">更多<i></i></a>
-                </div>
-                <ul class="row1-one-list">
-                    <li><a href="#" title="" target="_blank" class="txt hot">学位英语考试成绩12月公布</a></li>
-                    <li><a href="#" title="" target="_blank" class="txt">成人高考考生申请学士学位要过三关</a></li>
-                    <li><a href="#" title="" target="_blank" class="txt">北京开放大学今年计划招生1650人</a></li>
-                    <li><a href="#" title="" target="_blank" class="txt">2015年北京成人高考146名违规考生受处理</a></li>
-                    <li><a href="#" title="" target="_blank" class="txt">“2+1”模式确保2015年成人高考评卷给准每一分</a></li>
-                    <li><a href="#" title="" target="_blank" class="txt">2015年成考 考场新闻少 考生故事多</a></li>
-                    <li><a href="#" title="" target="_blank" class="txt">2015年成人高考4细节影响评卷扫描效果</a></li>
-                    <li><a href="#" title="" target="_blank" class="txt">“2+1”模式确保2015年成人高考评卷给准每一分</a></li>
-                    <li><a href="#" title="" target="_blank" class="txt">2015年成考 考场新闻少 考生故事多</a></li>
-                    <li><a href="#" title="" target="_blank" class="txt">2015年成人高考4细节影响评卷扫描效果</a></li>
-                </ul>
-            </div>
+            <?php }?>
         </div>
-        <div class="row1">
-            <div class="row1-one fl">
-                <div class="row1-one-tit">
-                    <span class="row1-tit-1"><a href="#">考试动态</a></span>
-                    <a class="tit-more" target="_blank" href="#">更多<i></i></a>
-                </div>
-                <ul class="row1-one-list">
-                    <li><a href="#" title="" target="_blank" class="txt hot">学位英语考试成绩12月公布</a></li>
-                    <li><a href="#" title="" target="_blank" class="txt">成人高考考生申请学士学位要过三关成人高考考生申请学士学位要过三关</a></li>
-                    <li><a href="#" title="" target="_blank" class="txt">北京开放大学今年计划招生1650人</a></li>
-                    <li><a href="#" title="" target="_blank" class="txt">2015年北京成人高考146名违规考生受处理</a></li>
-                    <li><a href="#" title="" target="_blank" class="txt">“2+1”模式确保2015年成人高考评卷给准每一分</a></li>
-                    <li><a href="#" title="" target="_blank" class="txt">2015年成考 考场新闻少 考生故事多</a></li>
-                    <li><a href="#" title="" target="_blank" class="txt">2015年成人高考4细节影响评卷扫描效果</a></li>
-                    <li><a href="#" title="" target="_blank" class="txt">“2+1”模式确保2015年成人高考评卷给准每一分</a></li>
-                    <li><a href="#" title="" target="_blank" class="txt">2015年成考 考场新闻少 考生故事多</a></li>
-                    <li><a href="#" title="" target="_blank" class="txt">2015年成人高考4细节影响评卷扫描效果</a></li>
-                </ul>
-            </div>
-            <div class="row1-one fr">
-                <div class="row1-one-tit">
-                    <span class="row1-tit-1"><a href="#">报名时间</a></span>
-                    <a class="tit-more" target="_blank" href="#">更多<i></i></a>
-                </div>
-                <ul class="row1-one-list">
-                    <li><a href="#" title="" target="_blank" class="txt hot">学位英语考试成绩12月公布</a></li>
-                    <li><a href="#" title="" target="_blank" class="txt">成人高考考生申请学士学位要过三关</a></li>
-                    <li><a href="#" title="" target="_blank" class="txt">北京开放大学今年计划招生1650人</a></li>
-                    <li><a href="#" title="" target="_blank" class="txt">2015年北京成人高考146名违规考生受处理</a></li>
-                    <li><a href="#" title="" target="_blank" class="txt">“2+1”模式确保2015年成人高考评卷给准每一分</a></li>
-                    <li><a href="#" title="" target="_blank" class="txt">2015年成考 考场新闻少 考生故事多</a></li>
-                    <li><a href="#" title="" target="_blank" class="txt">2015年成人高考4细节影响评卷扫描效果</a></li>
-                    <li><a href="#" title="" target="_blank" class="txt">“2+1”模式确保2015年成人高考评卷给准每一分</a></li>
-                    <li><a href="#" title="" target="_blank" class="txt">2015年成考 考场新闻少 考生故事多</a></li>
-                    <li><a href="#" title="" target="_blank" class="txt">2015年成人高考4细节影响评卷扫描效果</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="row1">
-            <div class="row1-one fl">
-                <div class="row1-one-tit">
-                    <span class="row1-tit-1"><a href="#">考试动态</a></span>
-                    <a class="tit-more" target="_blank" href="#">更多<i></i></a>
-                </div>
-                <ul class="row1-one-list">
-                    <li><a href="#" title="" target="_blank" class="txt hot">学位英语考试成绩12月公布</a></li>
-                    <li><a href="#" title="" target="_blank" class="txt">成人高考考生申请学士学位要过三关成人高考考生申请学士学位要过三关</a></li>
-                    <li><a href="#" title="" target="_blank" class="txt">北京开放大学今年计划招生1650人</a></li>
-                    <li><a href="#" title="" target="_blank" class="txt">2015年北京成人高考146名违规考生受处理</a></li>
-                    <li><a href="#" title="" target="_blank" class="txt">“2+1”模式确保2015年成人高考评卷给准每一分</a></li>
-                    <li><a href="#" title="" target="_blank" class="txt">2015年成考 考场新闻少 考生故事多</a></li>
-                    <li><a href="#" title="" target="_blank" class="txt">2015年成人高考4细节影响评卷扫描效果</a></li>
-                    <li><a href="#" title="" target="_blank" class="txt">“2+1”模式确保2015年成人高考评卷给准每一分</a></li>
-                    <li><a href="#" title="" target="_blank" class="txt">2015年成考 考场新闻少 考生故事多</a></li>
-                    <li><a href="#" title="" target="_blank" class="txt">2015年成人高考4细节影响评卷扫描效果</a></li>
-                </ul>
-            </div>
-            <div class="row1-one fr">
-                <div class="row1-one-tit">
-                    <span class="row1-tit-1"><a href="#">报名时间</a></span>
-                    <a class="tit-more" target="_blank" href="#">更多<i></i></a>
-                </div>
-                <ul class="row1-one-list">
-                    <li><a href="#" title="" target="_blank" class="txt hot">学位英语考试成绩12月公布</a></li>
-                    <li><a href="#" title="" target="_blank" class="txt">成人高考考生申请学士学位要过三关</a></li>
-                    <li><a href="#" title="" target="_blank" class="txt">北京开放大学今年计划招生1650人</a></li>
-                    <li><a href="#" title="" target="_blank" class="txt">2015年北京成人高考146名违规考生受处理</a></li>
-                    <li><a href="#" title="" target="_blank" class="txt">“2+1”模式确保2015年成人高考评卷给准每一分</a></li>
-                    <li><a href="#" title="" target="_blank" class="txt">2015年成考 考场新闻少 考生故事多</a></li>
-                    <li><a href="#" title="" target="_blank" class="txt">2015年成人高考4细节影响评卷扫描效果</a></li>
-                    <li><a href="#" title="" target="_blank" class="txt">“2+1”模式确保2015年成人高考评卷给准每一分</a></li>
-                    <li><a href="#" title="" target="_blank" class="txt">2015年成考 考场新闻少 考生故事多</a></li>
-                    <li><a href="#" title="" target="_blank" class="txt">2015年成人高考4细节影响评卷扫描效果</a></li>
-                </ul>
-            </div>
-        </div>
+        <?php }?>
+
     </div>
     <div class="right-slide">
         <div class="right_01">
-            <div class="right_01_title"><a href="#">成才资讯</a></div>
-            <div class="right_01_con">
-                <ul class="list-01 clearfix">
-                    <li><a href="#" title="" target="_blank">2015年广东成人高考成绩什么时候查询？年广东成人高考成绩什么时候查询</a></li>
-                    <li><a href="#" title="">2015年云南成人高考录取查询时间预计</a></li>
-                    <li><a href="#" title="" target="_blank">2015年重庆成人高考录取查询时间</a></li>
-                    <li><a href="#" title="" target="_blank">2015年四川成人高考录取查询时间</a></li>
-                    <li><a href="#" title="" target="_blank">2015年湖北成人高考录取查询时间</a></li>
-                    <li><a href="#" title="" target="_blank">2015年北京成人高考什么时候成绩查询</a></li>
-                    <li><a href="#" title="" target="_blank">2015北京成人高考何时成绩查询?在哪查分</a></li>
-                    <li><a href="#" title="" target="_blank">2015年成人高考成绩什么时候公布?</a></li>
-                    <li><a href="#" title="" target="_blank">2015年江西成人高考专升本成绩何时公布？</a></li>
-                    <li><a href="#" title="" target="_blank">2015年江西成人高考专升本成绩何时公布？</a></li>
+            <div class="right_01_title">考试日历</div>
+            <div class="channel_calendar">
+                <ul class="channel_calendar_list">
+                    <li><div>报名时间</div>	<div>预计2017年10月15日左右</div></li>
+                    <li><div>准考证打印</div>	<div>笔试前一周左右</div></li>
+                    <li><div>笔试时间</div>	<div>预计2017年11月下旬</div></li>
+                    <li><div>成绩查询</div>	<div>预计2018年1月中旬</div></li>
+                    <li><div>面试时间</div>	<div>预计2018年2月份起</div></li>
                 </ul>
             </div>
         </div>
-        <div class="right_01">
-            <div class="right_01_title"><a href="#">成才资讯</a></div>
-            <div class="right_01_con">
-                <ul class="list-01 clearfix">
-                    <li><a href="#" title="" target="_blank">2015年广东成人高考成绩什么时候查询？</a></li>
-                    <li><a href="#" title="">2015年云南成人高考录取查询时间预计</a></li>
-                    <li><a href="#" title="" target="_blank">2015年重庆成人高考录取查询时间</a></li>
-                    <li><a href="#" title="" target="_blank">2015年四川成人高考录取查询时间</a></li>
-                    <li><a href="#" title="" target="_blank">2015年湖北成人高考录取查询时间</a></li>
-                    <li><a href="#" title="" target="_blank">2015年北京成人高考什么时候成绩查询</a></li>
-                    <li><a href="#" title="" target="_blank">2015北京成人高考何时成绩查询?在哪查分</a></li>
-                    <li><a href="#" title="" target="_blank">2015年成人高考成绩什么时候公布?</a></li>
-                    <li><a href="#" title="" target="_blank">2015年江西成人高考专升本成绩何时公布？</a></li>
-                    <li><a href="#" title="" target="_blank">2015年江西成人高考专升本成绩何时公布？</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="right_01">
-            <div class="right_01_title"><a href="#">成才资讯</a></div>
-            <div class="right_01_con">
-                <ul class="list-01 clearfix">
-                    <li><a href="#" title="" target="_blank">2015年广东成人高考成绩什么时候查询？</a></li>
-                    <li><a href="#" title="">2015年云南成人高考录取查询时间预计</a></li>
-                    <li><a href="#" title="" target="_blank">2015年重庆成人高考录取查询时间</a></li>
-                    <li><a href="#" title="" target="_blank">2015年四川成人高考录取查询时间</a></li>
-                    <li><a href="#" title="" target="_blank">2015年湖北成人高考录取查询时间</a></li>
-                    <li><a href="#" title="" target="_blank">2015年北京成人高考什么时候成绩查询</a></li>
-                    <li><a href="#" title="" target="_blank">2015北京成人高考何时成绩查询?在哪查分</a></li>
-                    <li><a href="#" title="" target="_blank">33332015年成人高考成绩什么时候公布?2</a></li>
-                    <li><a href="#" title="" target="_blank">2015年江西成人高考专升本成绩何时公布？</a></li>
-                    <li><a href="#" title="" target="_blank">2015年江西成人高考专升本成绩何时公布？</a></li>
-                </ul>
-            </div>
-        </div>
+
     </div>
 </div>
 

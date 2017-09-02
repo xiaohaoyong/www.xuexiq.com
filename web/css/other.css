@@ -18,8 +18,8 @@
 .hd-title .fr a:hover{ color:#c00;}
 /*右侧部分*/
 .right-slide{ width:300px; float:right;}
-.right_01{ border: 1px solid #d5d5d5;height: 300px;margin-bottom: 15px;}
-.right_01_title{ background-color: #f5f7f8;height:37px; line-height:37px; border-bottom:1px solid #d5d5d5; padding-left:15px; }
+.right_01{ border: 1px solid #d5d5d5;margin-bottom: 15px;}
+.right_01_title{ background-color: #f5f7f8;height:37px; line-height:37px; border-bottom:1px solid #d5d5d5; padding-left:15px; font-size: 14px; }
 .right_01_title a{font-size:14px;}
 .right_01_title a:hover{ color:#c00;}
 .right_01_con{ padding:0 15px;}
@@ -124,3 +124,9 @@ box-shadow: 1px 1px 1px #f5f5f5; height: 50px;}
     padding: 20px 0;
     width: 1024px;
 }
+.channel_calendar_list{margin: 0;}
+.channel_calendar_list li {height: 40px;border-bottom:1px solid #d5d5d5;}
+.channel_calendar_list li:last-child{border-bottom: none}
+.channel_calendar_list li div{height: 40px; line-height: 40px; width: 35%; float: left; text-align: center; font-size: 14px;font-weight: bold;}
+.channel_calendar_list li div:first-child{ padding-left: 20px;}
+.channel_calendar_list li div:last-child{width: 65%;}
